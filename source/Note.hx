@@ -209,6 +209,8 @@ class Note extends FlxSprite
 					reloadNote('phone-alt');
 				case 'phone':
 					reloadNote('phone');
+				case 'phone-zardy':
+					reloadNote('phone-zardy');
 				case 'guitarHero':
 					reloadNote('guitarHero');				
 				case 'shape':
