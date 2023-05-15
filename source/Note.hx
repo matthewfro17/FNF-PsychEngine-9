@@ -58,6 +58,8 @@ class Note extends FlxSprite
 	// End of extra keys stuff
 	//////////////////////////////////////////////////
 
+	public var noteStyle:String = 'normal';
+	public var LocalScrollSpeed:Float = 1;
 	public var alphaMult:Float = 1.0;
 	public var noteOffset:Float = 0;
 
