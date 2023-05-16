@@ -40,6 +40,9 @@ jobs:
           haxelib --never install flixel 4.11.0
           haxelib run lime setup flixel
           haxelib run lime setup
+          haxelib remove flixel-addons
+          haxelib remove flixel-tools
+          haxelib remove flixel-ui
           haxelib install flixel-tools
           haxelib install flixel-ui
           haxelib install flixel-addons 2.9.0
