@@ -1,0 +1,100 @@
+{
+	"dialogue": [
+		{
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "nothing",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "After the events of Splitathon, BF and GF are invited to a festival to sing with Dave and his friends a few weeks later."
+		},
+		{
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "dave-festival",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "Hello you two!"
+		},
+		{
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "dave-festival",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "Are you ready to rap, BF?"
+		},
+		{
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "dabbf",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "Bep."
+		},
+		{
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "dave-festival",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "We're a bit scarce with a crowd but I'll do my best to put on a great show!"
+		},
+		{
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "dabgf",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "We're usually pretty good at making one."
+		},
+		{
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "dave-festival",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "Great! I've got a lineup of people for you to sing with."
+		},
+		{
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "dave-festival",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "It'll be Bambi, Tristan, and then me!"
+		},
+		{
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "dave-festival",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "If we creat one big enough of a buzz I might just sing another.."
+		},
+		{
+			"sound": "",
+			"speed": 0.035,
+			"portrait": "bambi",
+			"boxState": "angry",
+			"expression": "annoyed",
+			"text": "Come on!!!"
+		},
+		{
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "dave-festival",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "Alright alright, I'll let you guys start!"
+		},
+		{
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "dabbf",
+			"boxState": "normal",
+			"expression": "ready",
+			"text": "Yeah!"
+		}
+	]
+}

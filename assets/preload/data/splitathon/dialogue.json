@@ -1,0 +1,180 @@
+{
+	"dialogue": [
+		{
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "nothing",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "We continue with the group sitting outside and socializing."
+		},
+		{
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "dave",
+			"boxState": "normal",
+			"expression": "splitathon",
+			"text": "hey, uhh, BF is it?"
+		},
+		{
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "dabbf",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "Bo?"
+		},
+		{
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "dave",
+			"boxState": "normal",
+			"expression": "splitathon",
+			"text": "I feel like we never really settled it the last time we fought.."
+		},
+		{
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "dabbf",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "Bop?"
+		},
+		{
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "dabgf",
+			"boxState": "normal",
+			"expression": "what",
+			"text": "Settled what?"
+		},
+		{
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "dave",
+			"boxState": "normal",
+			"expression": "splitathon",
+			"text": "We haven't really settled on who is better at the whole singing thing."
+		},
+		{
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "dabbf",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "Boh."
+		},
+		{
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "dabgf",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "Well I can get some stuff arranged real quick if you really want to know."
+		},
+		{
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "dave",
+			"boxState": "normal",
+			"expression": "splitathon",
+			"text": "Well if that's the case..."
+		},
+		{
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "dave",
+			"boxState": "normal",
+			"expression": "splitathon",
+			"text": "GF, but on the longest instrumental you have!"
+		},
+		{
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "dabgf",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "Alright then. Best I can do is ten minuets."
+		},
+		{
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "dave",
+			"boxState": "normal",
+			"expression": "splitathon",
+			"text": "Well how's about a ten minuet showdown BF?"
+		},
+		{
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "dabbf",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "Yeah!"
+		},
+		{
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "dave",
+			"boxState": "normal",
+			"expression": "splitathon",
+			"text": "Whoever outlasts the other will be proven the better rapper!"
+		},
+		{
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "bambi",
+			"boxState": "normal",
+			"expression": "splitathon",
+			"text": "What about me?"
+		},
+		{
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "dave",
+			"boxState": "normal",
+			"expression": "splitathon",
+			"text": "Bambi, this doesn't involve you.."
+		},
+		{
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "bambi",
+			"boxState": "normal",
+			"expression": "splitathon",
+			"text": "..."
+		},
+		{
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "nothing",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "Bambi looks angered but sits down and spectates."
+		},
+		{
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "bambi",
+			"boxState": "normal",
+			"expression": "splitathon",
+			"text": "Fine."
+		},
+		{
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "dave",
+			"boxState": "normal",
+			"expression": "splitathon",
+			"text": "Alright, let's settle this!"
+		},
+		{
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "dabbf",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "Beep bo bop!"
+		}
+	]
+}
