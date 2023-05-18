@@ -31,6 +31,19 @@ class Note extends FlxSprite
 	public static var ammo:Array<Int> = EKData.gun;
 	public static var minMania:Int = 0;
 	public static var maxMania:Int = 17; // key value is this + 1
+		
+	public var mania:Int = 0;
+
+	public static var widths:Array<Float> = [160, 140, 120, 110, 90, 70];
+	public static var scales:Array<Float> = [0.7, 0.65, 0.6, 0.55, 0.46, 0.36];
+	public static var posRest:Array<Int> = [0, 25, 35, 50, 70, 80];
+
+	public static var swagWidth:Float = 160 * 0.7;
+	public static var noteSize:Float = 0.7;
+	public static var PURP_NOTE:Int = 0;
+	public static var GREEN_NOTE:Int = 2;
+	public static var BLUE_NOTE:Int = 1;
+	public static var RED_NOTE:Int = 3;
 	public static var scales:Array<Float> = EKData.scales;
 	public static var lessX:Array<Int> = EKData.lessX;
 	public static var separator:Array<Int> = EKData.noteSep;
@@ -58,7 +71,12 @@ class Note extends FlxSprite
 
 	// End of extra keys stuff
 	//////////////////////////////////////////////////
-
+	
+	private var CharactersWith3D:Array<String> = ['dave-angey', 'bambi-3d', 'expunged', 'bambi-unfair', 'exbungo',
+	'dave-festival-3d', 'dave-3d-recursed', 'bf-3d', 'nofriend', 'dave-angey-old', 'dave-insanity-3d', 'dave-3d-standing-bruh-what',
+	'furiosity-dave', 'furiosity-dave-alpha-4', 'bambi-unfair', 'bambi-3d-scrapped', 'bambi-3d-old',
+	'bambi-unfair-old', 'cockey', 'old-cockey', 'older-cockey', 'pissey', 'old-pissey', 'shartey'];
+	
 	public var noteStyle:String = 'normal';
 	public var LocalScrollSpeed:Float = 1;
 	public var alphaMult:Float = 1.0;
@@ -317,12 +335,87 @@ class Note extends FlxSprite
 		if(prefix == null) prefix = '';
 		if(texture == null) texture = '';
 		if(suffix == null) suffix = '';
+	
+	public function new(strumTime:Float, noteData:Int, ?prevNote:Note, ?sustainNote:Bool = false, ?musthit:Bool = true, noteStyle:String = "normal", inCharter:Bool = false, guitarSection:Bool = false)
+	{
+		mania = PlayState.SONG.mania;
+		swagWidth = widths[mania] * 0.7; //factor not the same as noteScale
+
+		super();
+
+		if (prevNote == null)
+			prevNote = this;
+
+		this.prevNote = prevNote;
+		this.noteStyle = noteStyle;
+		this.isSustainNote = sustainNote;
+		this.originalType = noteData;
+		this.guitarSection = guitarSection;
+		this.noteData = noteData;
+
+		x += 78 - posRest[mania];
+		// MAKE SURE ITS DEFINITELY OFF SCREEN?
+		//NOW IT SHALL FOR REALLY ALWAYS BE OFF SCREEN.
+		//luckily i think only the devs really noticed that you can see the notes spawn in at the bottom of the screen when there is a modchart.
+		y -= 9000;
 		
-		var skin:String = texture;
-		switch (skin)
+		inCharter ? this.strumTime = strumTime : {
+			this.strumTime = Math.round(strumTime);
+			alpha = 0;
+		}
+		
+		if (this.strumTime < 0)
+			this.strumTime = 0;
+
+		if (isInState('PlayState'))
+		{
+			this.strumTime += FlxG.save.data.offset;
+		}		
+		if (mania == 1) notes = ['purple', 'blue', 'white', 'green', 'red'];
+		if (mania == 2) notes = ['purple', 'green', 'red', 'yellow', 'blue', 'dark'];
+		if (mania == 3) notes = ['purple', 'green', 'red', 'white', 'yellow', 'blue', 'dark'];
+		if (mania == 4) notes = ['purple', 'blue', 'green', 'red', 'white', 'yellow', 'violet', 'black', 'dark'];
+		if (mania == 5) notes = ['purple', 'blue', 'green', 'red', 'pink', 'turq', 'emerald', 'lightred', 'yellow', 'violet', 'black', 'dark'];
+		if ((guitarSection && inCharter && noteData < 5) || (guitarSection)) notes = ['green', 'red', 'yellow', 'blue', 'orange'];
+
+		var notePathLol:String = 'notes/NOTE_assets';
+		noteSize = scales[mania];
+
+		if ((((CharactersWith3D.contains(PlayState.SONG.player2) && !musthit) || ((CharactersWith3D.contains(PlayState.SONG.player1)
+				|| CharactersWith3D.contains(PlayState.characteroverride) || CharactersWith3D.contains(PlayState.formoverride)) && musthit))
+				|| ((CharactersWith3D.contains(PlayState.SONG.player2) || CharactersWith3D.contains(PlayState.SONG.player1)) && ((this.strumTime / 50) % 20 > 10)))
+				&& this.noteStyle == 'normal')
+		{
+			this.noteStyle = '3D';
+			notePathLol = 'notes/NOTE_assets_3D';
+		}
+		switch (noteStyle)
+		{
+			case 'phone':
+				notePathLol = 'notes/NOTE_phone';
+			case 'shape':
+				notePathLol = 'notes/NOTE_assets_Shape';
+		}
+		switch (PlayState.SONG.song.toLowerCase())
+		{
+			case 'overdrive':
+				notePathLol = 'notes/OMGtop10awesomehi';
+			case 'recursed':
+				musthit ? {
+					if ((this.strumTime / 50) % 20 > 12 && !isSustainNote)
+					{
+						this.noteStyle = 'text';
+					}
+				} : {
+					this.noteStyle = 'recursed';
+					notePathLol = 'notes/NOTE_recursed';
+				}
+		}
+		if (guitarSection) this.noteStyle = 'guitarHero';
+		switch (this.noteStyle)
 		{
 			default:
-				frames = Paths.getSparrowAtlas('notes/NOTE_assets', 'shared');
+				frames = Paths.getSparrowAtlas(notePathLol, 'shared');
 
 				animation.addByPrefix('greenScroll', 'green0');
 				animation.addByPrefix('redScroll', 'red0');
@@ -372,7 +465,7 @@ class Note extends FlxSprite
 				antialiasing = noteStyle != '3D';
 			
 			case 'shape':
-				frames = Paths.getSparrowAtlas('notes/NOTE_assets_Shape', 'shared');
+				frames = Paths.getSparrowAtlas(notePathLol, 'shared');
 
 				animation.addByPrefix('greenScroll', 'green0');
 				animation.addByPrefix('redScroll', 'red0');
@@ -452,7 +545,7 @@ class Note extends FlxSprite
 				setGraphicSize(Std.int(width * 0.7));
 				updateHitbox();
 				antialiasing = true;
-			case 'phone' | 'phone-alt' | 'phone-zardy':
+			case 'phone' | 'phone-alt':
 				if (!isSustainNote)
 				{
 					frames = Paths.getSparrowAtlas('notes/NOTE_phone', 'shared');
